@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <h2>Derniers messages</h2>
+
+        <div class="grid" id="messages" {{ turbo_stream_listen('chat') }}>
+            {% for message in messages %}
+                <twig:MessageComponent :message="message"></twig:MessageComponent>
+            {% endfor %}
+        </div>
+        <turbo-frame id="message_form">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button>Envoyer</button>
+            {{ form_end(form) }}
+        </turbo-frame>
+    </main>
+{% endblock %}

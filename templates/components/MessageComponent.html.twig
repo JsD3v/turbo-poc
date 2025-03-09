@@ -1,0 +1,7 @@
+<div{{attributes}}>
+    <article id="{{ 'message_' ~ message.id }}">
+        <p>{{ message.content }}</p>
+        <div>
+            {{ message.createdAt|date('Y-m-d H:i:s') }}</div>
+    </article>
+</div>

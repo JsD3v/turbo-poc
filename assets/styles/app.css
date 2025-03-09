@@ -1,3 +1,31 @@
-body {
-    background-color: skyblue;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+
+
+body{
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.mx-auto{
+    margin: 0 auto;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+
+.custom{
+    display: grid;
+    grid-template-columns:
+  minmax(250px, max-content)
+  repeat(auto-fill, 200px) 20%;
+    gap: 1em;
 }

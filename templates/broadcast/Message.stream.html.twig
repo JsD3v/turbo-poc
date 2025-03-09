@@ -1,0 +1,19 @@
+{% block create %}
+    <turbo-stream action="prepend" target="messages">
+        <template>
+            <twig:MessageComponent :message="entity"></twig:MessageComponent>
+        </template>
+    </turbo-stream>
+{% endblock %}
+
+{% block update %}
+    <turbo-stream action="replace" target="message_{{ id }}">
+        <template>
+            <twig:MessageComponent :message="entity"></twig:MessageComponent>
+        </template>
+    </turbo-stream>
+{% endblock %}
+
+{% block remove %}
+    <turbo-stream action="remove" target="message_{{ id }}"></turbo-stream>
+{% endblock %}
