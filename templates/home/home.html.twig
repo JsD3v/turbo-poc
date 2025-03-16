@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+    :root {
+        --primary: #7c5cbd;
+        --primary-hover: #6344a6;
+        --pico-card-background-color: #fff;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 2rem 0;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+        background-color: var(--card-background-color);
+    }
+
+    .chat-preview {
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        background-color: var(--card-background-color);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .message {
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        margin-bottom: 0.75rem;
+        max-width: 80%;
+    }
+
+    .message-received {
+        background-color: #f1f1f1;
+        align-self: flex-start;
+        margin-right: auto;
+    }
+
+    .message-sent {
+        background-color: var(--primary);
+        color: white;
+        align-self: flex-end;
+        margin-left: auto;
+    }
+
+    .chat-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        text-align: center;
+    }
+    .feature-card p , .feature-card h3 {
+        color: #0a0a0a;
+    }
+
+    footer {
+        margin-top: auto;
+        text-align: center;
+        padding: 1rem 0;
+    }
+</style>
+<nav class="container">
+    <ul>
+        <li><strong>ChatApp</strong></li>
+    </ul>
+    <ul>
+        <li><a href="#features">Fonctionnalités</a></li>
+        <li><a href="#" role="button">Se connecter</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <section class="hero">
+        <h1>Discutez simplement avec ChatApp</h1>
+        <p>Une application de messagerie moderne, rapide et sécurisée</p>
+        <a href="{{ path('app_register') }}" role="button">Commencer maintenant</a>
+    </section>
+
+    <section class="chat-preview">
+        <h2>Une expérience de chat intuitive</h2>
+        <div class="chat-container">
+            <!-- Exemple de messages pour la prévisualisation -->
+            <div class="message message-received">
+                Bonjour ! Comment puis-je t'aider aujourd'hui ?
+            </div>
+            <div class="message message-sent">
+                Je cherche un moyen simple de discuter avec mes amis.
+            </div>
+            <div class="message message-received">
+                C'est exactement ce que ChatApp propose ! Simple, rapide et sécurisé.
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <article class="feature-card">
+            <h3>Rapide</h3>
+            <p>Messagerie instantanée avec synchronisation en temps réel</p>
+        </article>
+        <article class="feature-card">
+            <h3>Sécurisé</h3>
+            <p>Chiffrement de bout en bout pour toutes vos conversations</p>
+        </article>
+        <article class="feature-card">
+            <h3>Simple</h3>
+            <p>Interface intuitive et minimaliste</p>
+        </article>
+    </section>
+</main>
+
+<footer class="container">
+    <small>© 2025 ChatApp - Tous droits réservés</small>
+</footer>
+
+{% endblock %}

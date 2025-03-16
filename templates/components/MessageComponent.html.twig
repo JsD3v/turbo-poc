@@ -1,7 +1,9 @@
-<div{{attributes}}>
-    <article id="{{ 'message_' ~ message.id }}">
-        <p>{{ message.content }}</p>
-        <div>
-            {{ message.createdAt|date('Y-m-d H:i:s') }}</div>
-    </article>
+<div {{ attributes}} class="message-wrapper {% if message.author == app.user %}message-mine{% else %}message-other{% endif %}" id="{{ 'message_' ~ message.id }}">
+    <div class="message-info">
+        <span class="message-author">{{ message.author.email }}</span>
+        <span class="message-time">{{ message.createdAt|date('H:i') }}</span>
+    </div>
+    <div class="message-bubble">
+        {{ message.content }}
+    </div>
 </div>

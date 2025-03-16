@@ -12,7 +12,9 @@
         {% endblock %}
     </head>
     <body class="container">
+        {% if app.current_route != 'app_home' %}
         {% include ('_inc/_header.html.twig')%}
+        {% endif %}
         {% block body %}{% endblock %}
     </body>
 </html>
